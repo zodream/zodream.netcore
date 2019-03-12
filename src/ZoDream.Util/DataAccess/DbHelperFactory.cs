@@ -1,8 +1,8 @@
-﻿namespace Coldairarrow.Util
+﻿namespace ZoDream.Util
 {
     /// <summary>
     /// 描述：数据库帮助类工厂
-    /// 作者：Coldairarrow
+    /// 作者：ZoDream
     /// </summary>
     public class DbHelperFactory
     {

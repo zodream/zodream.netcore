@@ -1,4 +1,4 @@
-﻿namespace Coldairarrow.Util
+﻿namespace ZoDream.Util
 {
     /// <summary>
     /// 数据库类型

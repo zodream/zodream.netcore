@@ -3,7 +3,7 @@ using System.Threading;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 时间帮助类

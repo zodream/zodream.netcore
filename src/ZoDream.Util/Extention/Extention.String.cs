@@ -12,7 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static partial class Extention
     {

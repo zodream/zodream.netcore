@@ -4,7 +4,7 @@ using System.Data;
 using System.Dynamic;
 using System.Linq;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static partial class Extention
     {

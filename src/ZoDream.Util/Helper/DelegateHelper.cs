@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 委托帮助类

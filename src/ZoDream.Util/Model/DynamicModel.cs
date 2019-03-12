@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 动态数据模型类

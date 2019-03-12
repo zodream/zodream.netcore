@@ -7,7 +7,7 @@ using System.Data.Common;
 using System.Net;
 using System.Net.NetworkInformation;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// PostgreSql数据库操作帮助类

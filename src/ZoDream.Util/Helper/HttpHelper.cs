@@ -11,7 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// Http请求操作帮助类

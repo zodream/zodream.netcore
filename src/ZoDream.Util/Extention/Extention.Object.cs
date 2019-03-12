@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static partial class Extention
     {

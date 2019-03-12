@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public interface ITest
     {

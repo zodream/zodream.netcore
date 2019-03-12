@@ -39,7 +39,7 @@ namespace ZoDream.DataRepository
         {
             IRepository res = null;
             DatabaseType _dbType = GetDbType(dbType);
-            Type dbRepositoryType = Type.GetType("Coldairarrow.DataRepository." + DbProviderFactoryHelper.DbTypeToDbTypeStr(_dbType) + "Repository");
+            Type dbRepositoryType = Type.GetType("ZoDream.DataRepository." + DbProviderFactoryHelper.DbTypeToDbTypeStr(_dbType) + "Repository");
             List<object> paramters = new List<object>();
             void BuildParamters()
             {

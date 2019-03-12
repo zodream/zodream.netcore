@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 百度接口签名帮助类

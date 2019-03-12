@@ -1,4 +1,4 @@
-﻿namespace Coldairarrow.Util
+﻿namespace ZoDream.Util
 {
     /// <summary>
     /// 日志操作类型

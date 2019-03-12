@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 数据表格分页

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using Npgsql;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 数据库操作提供源工厂帮助类

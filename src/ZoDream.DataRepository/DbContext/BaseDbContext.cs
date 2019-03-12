@@ -56,7 +56,7 @@ namespace ZoDream.DataRepository
             //以下代码最终目的就是将所有需要的实体类调用上面的方法加入到DbContext中，成为其中的一部分
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             var entityMethod = typeof(ModelBuilder).GetMethod("Entity", new Type[] { });
-            List<Type> types = Assembly.Load("Coldairarrow.Entity").GetTypes()
+            List<Type> types = Assembly.Load("ZoDream.Entity").GetTypes()
                 .Where(x => x.GetCustomAttribute(typeof(TableAttribute)) != null && x.FullName.Contains(_entityNamespace))
                 .ToList();
 

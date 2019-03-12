@@ -4,11 +4,11 @@ using System.Data;
 using System.Data.Common;
 using System.IO;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 描述：数据库操作抽象帮助类
-    /// 作者：Coldairarrow
+    /// 作者：ZoDream
     /// </summary>
     public abstract class DbHelper
     {

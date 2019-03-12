@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// MySql数据库操作帮助类

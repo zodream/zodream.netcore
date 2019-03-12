@@ -5,7 +5,7 @@ using System.Data;
 using System.Reflection;
 using System.Text;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static partial class Extention
     {

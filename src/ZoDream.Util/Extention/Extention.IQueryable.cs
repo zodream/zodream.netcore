@@ -8,11 +8,11 @@ using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// IQueryable<T>的拓展操作
-    /// 作者：Coldairarrow
+    /// 作者：ZoDream
     /// </summary>
     public static partial class Extention
     {

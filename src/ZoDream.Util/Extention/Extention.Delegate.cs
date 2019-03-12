@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// 拓展方法静态类

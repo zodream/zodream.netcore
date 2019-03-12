@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     /// <summary>
     /// GUID帮助类

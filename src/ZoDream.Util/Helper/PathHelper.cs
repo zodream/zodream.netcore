@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using System.IO;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static class PathHelper
     {

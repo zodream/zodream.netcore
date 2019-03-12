@@ -1,4 +1,4 @@
-﻿namespace Coldairarrow.Util
+﻿namespace ZoDream.Util
 {
     /// <summary>
     /// Ajax请求结果

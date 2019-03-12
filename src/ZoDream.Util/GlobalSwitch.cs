@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Hosting;
+using System;
 
 namespace ZoDream.Util
 {
@@ -51,7 +52,7 @@ namespace ZoDream.Util
         /// <summary>
         /// 默认数据库类型
         /// </summary>
-        public static DatabaseType DatabaseType { get; } = DatabaseType.SqlServer;
+        public static DatabaseType DatabaseType { get; } = DatabaseType.MySql;
 
         /// <summary>
         /// 默认数据库连接名

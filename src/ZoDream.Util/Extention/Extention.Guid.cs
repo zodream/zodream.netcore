@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Coldairarrow.Util
+namespace ZoDream.Util
 {
     public static partial class Extention
     {

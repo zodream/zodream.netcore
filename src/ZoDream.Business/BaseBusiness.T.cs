@@ -1,4 +1,15 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
+using ZoDream.Business.Common;
+using ZoDream.DataRepository;
+using ZoDream.Entity.Base_SysManage;
+using ZoDream.Util;
 
 namespace ZoDream.Business
 {
@@ -560,6 +571,11 @@ namespace ZoDream.Business
                         throw new Exception(aProperty.Value);
                 }
             }
+        }
+
+        DataTable IRepository<T>.GetDataTableWithSql(string sql)
+        {
+            throw new NotImplementedException();
         }
 
         public virtual Dictionary<string, string> CheckRepeatPropertyConfig { get; } = new Dictionary<string, string>();

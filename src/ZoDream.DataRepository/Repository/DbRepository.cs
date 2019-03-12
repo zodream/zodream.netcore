@@ -602,6 +602,11 @@ namespace ZoDream.DataRepository
             }
         }
 
+        DbContext IRepository.GetDbContext()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
