@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.Web", "ZoDream\ZoDream.Web.csproj", "{B1D3CD31-6BA5-4880-83F7-E050C442E7FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.Util", "ZoDream.Util\ZoDream.Util.csproj", "{EF212D42-954F-4BBB-8A75-355A4F5EFCB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.Business", "ZoDream.Business\ZoDream.Business.csproj", "{1D3D5D4F-4043-47C1-846E-B9DE512BA1C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.Console", "ZoDream.Console\ZoDream.Console.csproj", "{68F40D0E-288C-4176-A74F-0EFED67D19B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.Entity", "ZoDream.Entity\ZoDream.Entity.csproj", "{3353BFE1-3208-45F0-A3A5-9BB20E13B5E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoDream.DataRepository", "ZoDream.DataRepository\ZoDream.DataRepository.csproj", "{A76BB2DB-2D52-446E-B742-0D093A3F4269}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1D3CD31-6BA5-4880-83F7-E050C442E7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D3CD31-6BA5-4880-83F7-E050C442E7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D3CD31-6BA5-4880-83F7-E050C442E7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D3CD31-6BA5-4880-83F7-E050C442E7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF212D42-954F-4BBB-8A75-355A4F5EFCB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF212D42-954F-4BBB-8A75-355A4F5EFCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF212D42-954F-4BBB-8A75-355A4F5EFCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF212D42-954F-4BBB-8A75-355A4F5EFCB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3D5D4F-4043-47C1-846E-B9DE512BA1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3D5D4F-4043-47C1-846E-B9DE512BA1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3D5D4F-4043-47C1-846E-B9DE512BA1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3D5D4F-4043-47C1-846E-B9DE512BA1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F40D0E-288C-4176-A74F-0EFED67D19B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F40D0E-288C-4176-A74F-0EFED67D19B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F40D0E-288C-4176-A74F-0EFED67D19B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F40D0E-288C-4176-A74F-0EFED67D19B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3353BFE1-3208-45F0-A3A5-9BB20E13B5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3353BFE1-3208-45F0-A3A5-9BB20E13B5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3353BFE1-3208-45F0-A3A5-9BB20E13B5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3353BFE1-3208-45F0-A3A5-9BB20E13B5E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76BB2DB-2D52-446E-B742-0D093A3F4269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76BB2DB-2D52-446E-B742-0D093A3F4269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76BB2DB-2D52-446E-B742-0D093A3F4269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76BB2DB-2D52-446E-B742-0D093A3F4269}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED66F1DB-B9C1-4FFD-9ECC-EE4CD3598811}
+	EndGlobalSection
+EndGlobal

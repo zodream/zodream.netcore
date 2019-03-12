@@ -1,0 +1,19 @@
+﻿using ZoDream.Entity.Base_SysManage;
+using ZoDream.Util;
+using System;
+using System.Collections.Generic;
+
+namespace ZoDream.Business
+{
+    interface ILogger
+    {
+        void WriteSysLog(Base_SysLog log);
+        List<Base_SysLog> GetLogList(
+            string logContent,
+            string logType,
+            string opUserName,
+            DateTime? startTime,
+            DateTime? endTime,
+            Pagination pagination);
+    }
+}
