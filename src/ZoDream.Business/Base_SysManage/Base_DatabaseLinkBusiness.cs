@@ -1,4 +1,4 @@
-using ZoDream.Entity.Base_SysManage;
+ï»¿using ZoDream.Entity.Base_SysManage;
 using ZoDream.Util;
 using System;
 using System.Collections.Generic;
@@ -9,19 +9,19 @@ namespace ZoDream.Business.Base_SysManage
 {
     public class Base_DatabaseLinkBusiness : BaseBusiness<Base_DatabaseLink>
     {
-        #region Íâ²¿½Ó¿Ú
+        #region å¤–éƒ¨æ¥å£
 
         /// <summary>
-        /// »ñÈ¡Êı¾İÁĞ±í
+        /// è·å–æ•°æ®åˆ—è¡¨
         /// </summary>
-        /// <param name="condition">²éÑ¯ÀàĞÍ</param>
-        /// <param name="keyword">¹Ø¼ü×Ö</param>
+        /// <param name="condition">æŸ¥è¯¢ç±»å‹</param>
+        /// <param name="keyword">å…³é”®å­—</param>
         /// <returns></returns>
         public List<Base_DatabaseLink> GetDataList(string condition, string keyword, Pagination pagination)
         {
             var q = GetIQueryable();
 
-            //Ä£ºı²éÑ¯
+            //æ¨¡ç³ŠæŸ¥è¯¢
             if (!condition.IsNullOrEmpty() && !keyword.IsNullOrEmpty())
                 q = q.Where($@"{condition}.Contains(@0)", keyword);
 
@@ -29,9 +29,9 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// »ñÈ¡Ö¸¶¨µÄµ¥ÌõÊı¾İ
+        /// è·å–æŒ‡å®šçš„å•æ¡æ•°æ®
         /// </summary>
-        /// <param name="id">Ö÷¼ü</param>
+        /// <param name="id">ä¸»é”®</param>
         /// <returns></returns>
         public Base_DatabaseLink GetTheData(string id)
         {
@@ -39,16 +39,16 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// Ìí¼ÓÊı¾İ
+        /// æ·»åŠ æ•°æ®
         /// </summary>
-        /// <param name="newData">Êı¾İ</param>
+        /// <param name="newData">æ•°æ®</param>
         public void AddData(Base_DatabaseLink newData)
         {
             Insert(newData);
         }
 
         /// <summary>
-        /// ¸üĞÂÊı¾İ
+        /// æ›´æ–°æ•°æ®
         /// </summary>
         public void UpdateData(Base_DatabaseLink theData)
         {
@@ -56,9 +56,9 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// É¾³ıÊı¾İ
+        /// åˆ é™¤æ•°æ®
         /// </summary>
-        /// <param name="theData">É¾³ıµÄÊı¾İ</param>
+        /// <param name="theData">åˆ é™¤çš„æ•°æ®</param>
         public void DeleteData(List<string> ids)
         {
             Delete(ids);
@@ -66,11 +66,11 @@ namespace ZoDream.Business.Base_SysManage
 
         #endregion
 
-        #region Ë½ÓĞ³ÉÔ±
+        #region ç§æœ‰æˆå‘˜
 
         #endregion
 
-        #region Êı¾İÄ£ĞÍ
+        #region æ•°æ®æ¨¡å‹
 
         #endregion
     }

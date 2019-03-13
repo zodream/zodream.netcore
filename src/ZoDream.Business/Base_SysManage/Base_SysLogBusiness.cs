@@ -1,4 +1,4 @@
-using ZoDream.Entity.Base_SysManage;
+ï»¿using ZoDream.Entity.Base_SysManage;
 using ZoDream.Util;
 using System;
 using System.Collections.Generic;
@@ -7,17 +7,17 @@ namespace ZoDream.Business.Base_SysManage
 {
     public class Base_SysLogBusiness : BaseBusiness<Base_SysLog>
     {
-        #region Íâ²¿½Ó¿Ú
+        #region å¤–éƒ¨æ¥å£
 
         /// <summary>
-        /// »ñÈ¡ÈÕÖ¾ÁĞ±í
+        /// è·å–æ—¥å¿—åˆ—è¡¨
         /// </summary>
-        /// <param name="logContent">ÈÕÖ¾ÄÚÈİ</param>
-        /// <param name="logType">ÈÕÖ¾ÀàĞÍ</param>
-        /// <param name="opUserName">²Ù×÷ÈËÓÃ»§Ãû</param>
-        /// <param name="startTime">¿ªÊ¼Ê±¼ä</param>
-        /// <param name="endTime">½áÊøÊ±¼ä</param>
-        /// <param name="pagination">·ÖÒ³²ÎÊı</param>
+        /// <param name="logContent">æ—¥å¿—å†…å®¹</param>
+        /// <param name="logType">æ—¥å¿—ç±»å‹</param>
+        /// <param name="opUserName">æ“ä½œäººç”¨æˆ·å</param>
+        /// <param name="startTime">å¼€å§‹æ—¶é—´</param>
+        /// <param name="endTime">ç»“æŸæ—¶é—´</param>
+        /// <param name="pagination">åˆ†é¡µå‚æ•°</param>
         /// <returns></returns>
         public List<Base_SysLog> GetLogList(
             string logContent,
@@ -32,11 +32,11 @@ namespace ZoDream.Business.Base_SysManage
 
         #endregion
 
-        #region Ë½ÓĞ³ÉÔ±
+        #region ç§æœ‰æˆå‘˜
 
         #endregion
 
-        #region Êı¾İÄ£ĞÍ
+        #region æ•°æ®æ¨¡å‹
 
         #endregion
     }

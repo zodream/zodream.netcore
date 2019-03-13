@@ -1,4 +1,4 @@
-using ZoDream.Business.Cache;
+ï»¿using ZoDream.Business.Cache;
 using ZoDream.Business.Common;
 using ZoDream.Entity.Base_SysManage;
 using ZoDream.Util;
@@ -15,13 +15,13 @@ namespace ZoDream.Business.Base_SysManage
         static Base_UserModelCache _cache { get; } = new Base_UserModelCache();
         static UserRoleCache _userRoleCache { get; } = new UserRoleCache();
         
-        #region Íâ²¿½Ó¿Ú
+        #region å¤–éƒ¨æ¥å£
 
         /// <summary>
-        /// »ñÈ¡Êı¾İÁĞ±í
+        /// è·å–æ•°æ®åˆ—è¡¨
         /// </summary>
-        /// <param name="condition">²éÑ¯ÀàĞÍ</param>
-        /// <param name="keyword">¹Ø¼ü×Ö</param>
+        /// <param name="condition">æŸ¥è¯¢ç±»å‹</param>
+        /// <param name="keyword">å…³é”®å­—</param>
         /// <returns></returns>
         public List<Base_UserModel> GetDataList(string condition, string keyword, Pagination pagination)
         {
@@ -36,7 +36,7 @@ namespace ZoDream.Business.Base_SysManage
             var q = from a in GetIQueryable().AsExpandable()
                     select selectExpre.Invoke(a);
 
-            //Ä£ºı²éÑ¯
+            //æ¨¡ç³ŠæŸ¥è¯¢
             if (!condition.IsNullOrEmpty() && !keyword.IsNullOrEmpty())
                 q = q.Where($@"{condition}.Contains(@0)", keyword);
             //Service.HandleSqlLog = log =>
@@ -49,9 +49,9 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// »ñÈ¡Ö¸¶¨µÄµ¥ÌõÊı¾İ
+        /// è·å–æŒ‡å®šçš„å•æ¡æ•°æ®
         /// </summary>
-        /// <param name="id">Ö÷¼ü</param>
+        /// <param name="id">ä¸»é”®</param>
         /// <returns></returns>
         public Base_User GetTheData(string id)
         {
@@ -61,18 +61,18 @@ namespace ZoDream.Business.Base_SysManage
         public void AddData(Base_User newData)
         {
             if (GetIQueryable().Any(x => x.UserName == newData.UserName))
-                throw new Exception("¸ÃÓÃ»§ÃûÒÑ´æÔÚ£¡");
+                throw new Exception("è¯¥ç”¨æˆ·åå·²å­˜åœ¨ï¼");
 
             Insert(newData);
         }
 
         /// <summary>
-        /// ¸üĞÂÊı¾İ
+        /// æ›´æ–°æ•°æ®
         /// </summary>
         public void UpdateData(Base_User theData)
         {
             if (theData.UserId == "Admin" && Operator.UserId != theData.UserId)
-                throw new Exception("½ûÖ¹¸ü¸Ä³¬¼¶¹ÜÀíÔ±£¡");
+                throw new Exception("ç¦æ­¢æ›´æ”¹è¶…çº§ç®¡ç†å‘˜ï¼");
 
             Update(theData);
             _cache.UpdateCache(theData.UserId);
@@ -95,15 +95,15 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// É¾³ıÊı¾İ
+        /// åˆ é™¤æ•°æ®
         /// </summary>
-        /// <param name="theData">É¾³ıµÄÊı¾İ</param>
+        /// <param name="theData">åˆ é™¤çš„æ•°æ®</param>
         public void DeleteData(List<string> ids)
         {
             var userIds = GetIQueryable().Where(x => ids.Contains(x.Id)).Select(x => x.UserId).ToList();
             var adminUser = GetTheUser("Admin");
             if (ids.Contains(adminUser.Id))
-                throw new Exception("³¬¼¶¹ÜÀíÔ±ÊÇÄÚÖÃÕËºÅ,½ûÖ¹É¾³ı£¡");
+                throw new Exception("è¶…çº§ç®¡ç†å‘˜æ˜¯å†…ç½®è´¦å·,ç¦æ­¢åˆ é™¤ï¼");
 
             Delete(ids);
             _cache.UpdateCache(userIds);
@@ -111,7 +111,7 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// »ñÈ¡µ±Ç°²Ù×÷ÕßĞÅÏ¢
+        /// è·å–å½“å‰æ“ä½œè€…ä¿¡æ¯
         /// </summary>
         /// <returns></returns>
         public static Base_UserModel GetCurrentUser()
@@ -120,9 +120,9 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// »ñÈ¡ÓÃ»§ĞÅÏ¢
+        /// è·å–ç”¨æˆ·ä¿¡æ¯
         /// </summary>
-        /// <param name="userId">ÓÃ»§Id</param>
+        /// <param name="userId">ç”¨æˆ·Id</param>
         /// <returns></returns>
         public static Base_UserModel GetTheUser(string userId)
         {
@@ -135,26 +135,26 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// ¸ü¸ÄÃÜÂë
+        /// æ›´æ”¹å¯†ç 
         /// </summary>
-        /// <param name="oldPwd">ÀÏÃÜÂë</param>
-        /// <param name="newPwd">ĞÂÃÜÂë</param>
-        public AjaxResult ChangePwd(string oldPwd, string newPwd)
+        /// <param name="oldPwd">è€å¯†ç </param>
+        /// <param name="newPwd">æ–°å¯†ç </param>
+        public JsonResponse ChangePwd(string oldPwd, string newPwd)
         {
-            AjaxResult res = new AjaxResult() { Success = true };
+            JsonResponse res;
             string userId = Operator.UserId;
             oldPwd = oldPwd.ToMD5String();
             newPwd = newPwd.ToMD5String();
             var theUser = GetIQueryable().Where(x => x.UserId == userId && x.Password == oldPwd).FirstOrDefault();
             if (theUser == null)
             {
-                res.Success = false;
-                res.Msg = "Ô­ÃÜÂë²»ÕıÈ·£¡";
+                res = new JsonResponse(400, "åŸå¯†ç ä¸æ­£ç¡®ï¼");
             }
             else
             {
                 theUser.Password = newPwd;
                 Update(theUser);
+                res = new JsonResponse();
             }
 
             _cache.UpdateCache(userId);
@@ -163,10 +163,10 @@ namespace ZoDream.Business.Base_SysManage
         }
 
         /// <summary>
-        /// ±£´æÈ¨ÏŞ
+        /// ä¿å­˜æƒé™
         /// </summary>
-        /// <param name="userId">ÓÃ»§Id</param>
-        /// <param name="permissions">È¨ÏŞÖµ</param>
+        /// <param name="userId">ç”¨æˆ·Id</param>
+        /// <param name="permissions">æƒé™å€¼</param>
         public void SavePermission(string userId, List<string> permissions)
         {
             Service.Delete<Base_PermissionUser>(x => x.UserId == userId);
@@ -194,11 +194,11 @@ namespace ZoDream.Business.Base_SysManage
 
         #endregion
 
-        #region Ë½ÓĞ³ÉÔ±
+        #region ç§æœ‰æˆå‘˜
 
         #endregion
 
-        #region Êı¾İÄ£ĞÍ
+        #region æ•°æ®æ¨¡å‹
 
         #endregion
     }

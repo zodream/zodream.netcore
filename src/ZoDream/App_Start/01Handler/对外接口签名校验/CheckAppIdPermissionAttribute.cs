@@ -24,7 +24,7 @@ namespace ZoDream.Web
             {
                 return;
             }
-            AjaxResult res = new AjaxResult();
+            JsonResponse res = new JsonResponse();
             //判断是否需要校验
             List<string> attrList = FilterHelper.GetFilterList(filterContext);
             bool needCheck = attrList.Contains(typeof(CheckAppIdPermissionAttribute).FullName) && !attrList.Contains(typeof(IgnoreAppIdPermissionAttribute).FullName);
@@ -34,8 +34,7 @@ namespace ZoDream.Web
             var allRequestParams = HttpHelper.GetAllRequestParams(filterContext.HttpContext);
             if(!allRequestParams.ContainsKey("appId"))
             {
-                res.Success = false;
-                res.Msg = "缺少appId参数！";
+                res = new JsonResponse(400, "缺少appId参数！");
                 filterContext.Result = new ContentResult { Content = res.ToJson() };
             }
             string appId = allRequestParams["appId"]?.ToString();
@@ -50,8 +49,7 @@ namespace ZoDream.Web
                 return;
             else
             {
-                res.Success = false;
-                res.Msg = "权限不足！访问失败！";
+                res = new JsonResponse(400, "权限不足！访问失败！"); 
                 filterContext.Result = new ContentResult { Content = res.ToJson() };
             }
         }

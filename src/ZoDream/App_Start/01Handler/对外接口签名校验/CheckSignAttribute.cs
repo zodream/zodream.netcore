@@ -37,11 +37,7 @@ namespace ZoDream.Web
             //需要签名
             if (!_checkSignBusiness.IsSecurity(filterContext.HttpContext))
             {
-                AjaxResult res = new AjaxResult
-                {
-                    Msg = "签名校验失败！拒绝访问！",
-                    Success = false
-                };
+                JsonResponse res = new JsonResponse(400, "签名校验失败！拒绝访问！");
                 filterContext.Result = new ContentResult() { Content = res.ToJson() };
             }
         }

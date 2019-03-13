@@ -51,7 +51,7 @@ namespace ZoDream.Web
                 {
                     filterContext.Result = new ContentResult
                     {
-                        Content = new AjaxResult { Success = false, ErrorCode = 1, Msg = "未登录" }.ToJson(),
+                        Content = new JsonResponse(401, "未登录" ).ToJson(),
                         ContentType = "application/json;charset=UTF-8"
                     };
                 }

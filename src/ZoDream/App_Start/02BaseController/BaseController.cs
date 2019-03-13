@@ -43,122 +43,78 @@ namespace ZoDream.Web
         /// 在调用操作方法后调用
         /// </summary>
         /// <param name="filterContext">请求上下文</param>
-        public override void OnActionExecuted(ActionExecutedContext context)
-        {
-            context.HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-            context.HttpContext.Response.Headers.Add("Access-Control-Allow-Headers", "*");
-            context.HttpContext.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-        }
+        //public override void OnActionExecuted(ActionExecutedContext context)
+        //{
+        //    context.HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+        //    context.HttpContext.Response.Headers.Add("Access-Control-Allow-Headers", "*");
+        //    context.HttpContext.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+        //}
 
         /// <summary>
         /// 默认返回JSON
         /// </summary>
         /// <param name="content">JSON字符串</param>
         /// <returns></returns>
-        public override ContentResult Content(string content)
+        public ContentResult Json(string content)
         {
             return base.Content(content, "application/json", Encoding.UTF8);
         }
 
+        public ContentResult Json(JsonResponse content)
+        {
+            return Json(content.ToJson());
+        }
         /// <summary>
-        /// 返回成功
+        /// 成功请求
         /// </summary>
         /// <returns></returns>
-        public ContentResult Success()
+        public ContentResult JsonSuccess()
         {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = "请求成功！",
-                Data = null
-            };
-
-            return Content(res.ToJson());
+            return Json(new JsonResponse());
+        }
+        /// <summary>
+        /// 
+        /// 成功请求
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public ContentResult JsonSuccess(object data)
+        {
+            return Json(new JsonResponse(data));
+        }
+        /// <summary>
+        /// 成功请求
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="messages"></param>
+        /// <returns></returns>
+        public ContentResult JsonSuccess(object data, object messages)
+        {
+            return Json(new JsonResponse(data, messages));
+        }
+        /// <summary>
+        /// 失败请求
+        /// </summary>
+        /// <param name="errors"></param>
+        /// <returns></returns>
+        public ContentResult JsonFailure(object errors)
+        {
+            return Json(new JsonResponse(400, errors));
         }
 
         /// <summary>
-        /// 返回成功
+        /// 失败请求
         /// </summary>
-        /// <param name="msg">消息</param>
+        /// <param name="code">不允许设为200</param>
+        /// <param name="errors"></param>
         /// <returns></returns>
-        public ContentResult Success(string msg)
+        public ContentResult JsonFailure(int code, object errors)
         {
-            AjaxResult res = new AjaxResult
+            if (code == 200)
             {
-                Success = true,
-                Msg = msg,
-                Data = null
-            };
-
-            return Content(res.ToJson());
-        }
-
-        /// <summary>
-        /// 返回成功
-        /// </summary>
-        /// <param name="data">返回的数据</param>
-        /// <returns></returns>
-        public ContentResult Success(object data)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = "请求成功！",
-                Data = data
-            };
-
-            return Content(res.ToJson());
-        }
-
-        /// <summary>
-        /// 返回成功
-        /// </summary>
-        /// <param name="msg">返回的消息</param>
-        /// <param name="data">返回的数据</param>
-        /// <returns></returns>
-        public ContentResult Success(string msg, object data)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = msg,
-                Data = data
-            };
-
-            return Content(res.ToJson());
-        }
-
-        /// <summary>
-        /// 返回错误
-        /// </summary>
-        /// <returns></returns>
-        public ContentResult Error()
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = false,
-                Msg = "请求失败！",
-                Data = null
-            };
-
-            return Content(res.ToJson());
-        }
-
-        /// <summary>
-        /// 返回错误
-        /// </summary>
-        /// <param name="msg">错误提示</param>
-        /// <returns></returns>
-        public ContentResult Error(string msg)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = false,
-                Msg = msg,
-                Data = null
-            };
-
-            return Content(res.ToJson());
+                code = 400;
+            }
+            return Json(new JsonResponse(code, errors));
         }
 
         /// <summary>

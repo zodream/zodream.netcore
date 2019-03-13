@@ -12,7 +12,7 @@ namespace ZoDream.Web
             var ex = context.Exception;
             BusHelper.HandleException(ex);
 
-            context.Result = new ContentResult { Content = new AjaxResult { Success = false, Msg = ex.Message }.ToJson() };
+            context.Result = new ContentResult { Content = new JsonResponse(400, ex.Message).ToJson() };
         }
     }
 }

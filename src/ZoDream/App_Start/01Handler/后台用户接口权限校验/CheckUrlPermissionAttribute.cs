@@ -41,11 +41,7 @@ namespace ZoDream.Web
                 return;
             else
             {
-                AjaxResult res = new AjaxResult
-                {
-                    Success = false,
-                    Msg = "权限不足！无法访问！"
-                };
+                JsonResponse res = new JsonResponse(400, "权限不足！无法访问！");
                 filterContext.Result = new ContentResult { Content = res.ToJson() };
             }
         }

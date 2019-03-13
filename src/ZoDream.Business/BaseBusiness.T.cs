@@ -416,104 +416,56 @@ namespace ZoDream.Business
         #region 业务返回
 
         /// <summary>
-        /// 返回成功
+        /// 成功请求
         /// </summary>
         /// <returns></returns>
-        public AjaxResult Success()
+        public JsonResponse JsonSuccess()
         {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = "请求成功！",
-                Data = null
-            };
-
-            return res;
+            return new JsonResponse();
+        }
+        /// <summary>
+        /// 
+        /// 成功请求
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public JsonResponse JsonSuccess(object data)
+        {
+            return new JsonResponse(data);
+        }
+        /// <summary>
+        /// 成功请求
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="messages"></param>
+        /// <returns></returns>
+        public JsonResponse JsonSuccess(object data, object messages)
+        {
+            return new JsonResponse(data, messages);
+        }
+        /// <summary>
+        /// 失败请求
+        /// </summary>
+        /// <param name="errors"></param>
+        /// <returns></returns>
+        public JsonResponse JsonFailure(object errors)
+        {
+            return new JsonResponse(400, errors);
         }
 
         /// <summary>
-        /// 返回成功
+        /// 失败请求
         /// </summary>
-        /// <param name="msg">消息</param>
+        /// <param name="code">不允许设为200</param>
+        /// <param name="errors"></param>
         /// <returns></returns>
-        public AjaxResult Success(string msg)
+        public JsonResponse JsonFailure(int code, object errors)
         {
-            AjaxResult res = new AjaxResult
+            if (code == 200)
             {
-                Success = true,
-                Msg = msg,
-                Data = null
-            };
-
-            return res;
-        }
-
-        /// <summary>
-        /// 返回成功
-        /// </summary>
-        /// <param name="data">返回的数据</param>
-        /// <returns></returns>
-        public AjaxResult Success(object data)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = "请求成功！",
-                Data = data
-            };
-
-            return res;
-        }
-
-        /// <summary>
-        /// 返回成功
-        /// </summary>
-        /// <param name="msg">返回的消息</param>
-        /// <param name="data">返回的数据</param>
-        /// <returns></returns>
-        public AjaxResult Success(string msg, object data)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = true,
-                Msg = msg,
-                Data = data
-            };
-
-            return res;
-        }
-
-        /// <summary>
-        /// 返回错误
-        /// </summary>
-        /// <returns></returns>
-        public AjaxResult Error()
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = false,
-                Msg = "请求失败！",
-                Data = null
-            };
-
-            return res;
-        }
-
-        /// <summary>
-        /// 返回错误
-        /// </summary>
-        /// <param name="msg">错误提示</param>
-        /// <returns></returns>
-        public AjaxResult Error(string msg)
-        {
-            AjaxResult res = new AjaxResult
-            {
-                Success = false,
-                Msg = msg,
-                Data = null
-            };
-
-            return res;
+                code = 400;
+            }
+            return new JsonResponse(code, errors);
         }
 
         #endregion

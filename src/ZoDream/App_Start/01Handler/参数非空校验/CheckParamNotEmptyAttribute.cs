@@ -34,11 +34,7 @@ namespace ZoDream.Web
             }).ToList();
             if (needParamters.Count != 0)
             {
-                AjaxResult res = new AjaxResult
-                {
-                    Success = false,
-                    Msg = $"参数:{string.Join(",", needParamters)}不能为空！"
-                };
+                JsonResponse res = new JsonResponse(400, $"参数:{string.Join(",", needParamters)}不能为空！");
                 filterContext.Result = new ContentResult { Content = res.ToJson(), ContentType = "application/json;charset=utf-8" };
             }
         }
